@@ -54,4 +54,13 @@ public class ClienteService {
                 ))
                 .toList();
     }
+
+    public void deletarCliente(Long id){
+        var cliente = clienteRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Cliente não existe"
+                ));
+
+        clienteRepository.deleteById(id);
+    }
 }

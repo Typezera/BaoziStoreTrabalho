@@ -37,4 +37,12 @@ public class ClienteController {
     public ResponseEntity<List<ClienteModel>>todosClientes(){
         return ResponseEntity.ok(clienteService.todosClientes());
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String>deletarClinete(
+            @PathVariable Long id
+    ){
+        clienteService.deletarCliente(id);
+        return ResponseEntity.ok("Cliente removido com sucesso");
+    }
 }
