@@ -59,7 +59,7 @@ public class ProdutoService {
     }
 
     public void removerProduto(Long id){
-        var produto = produtoRepository.findById(id)
+        produtoRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Produto não encontrado"
                 ));
