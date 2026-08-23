@@ -13,7 +13,7 @@ public class PedidoModel {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private ClienteModel cliente;
+    private ClienteModel clienteId;
 
     @ManyToOne
     @JoinColumn(name = "produto_id")

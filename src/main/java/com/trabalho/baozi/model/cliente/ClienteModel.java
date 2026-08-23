@@ -1,8 +1,10 @@
 package com.trabalho.baozi.model.cliente;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="cliente")
@@ -13,7 +15,26 @@ public class ClienteModel {
 
     String nome;
 
-    BigDecimal preco;
+    @CreationTimestamp
+    LocalDateTime clienteDesde;
 
-    Boolean estoque;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setClienteDesde(LocalDateTime clienteDesde) {
+        this.clienteDesde = clienteDesde;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public LocalDateTime getClienteDesde() {
+        return clienteDesde;
+    }
 }

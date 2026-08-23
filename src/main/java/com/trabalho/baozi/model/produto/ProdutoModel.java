@@ -16,4 +16,32 @@ public class ProdutoModel {
     BigDecimal preco;
 
     Boolean estoque;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public Boolean getEstoque() {
+        return estoque;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
+    }
+
+    public void setEstoque(Boolean estoque) {
+        this.estoque = estoque;
+    }
 }
