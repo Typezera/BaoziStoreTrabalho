@@ -17,6 +17,15 @@ public class ProdutoModel {
 
     Boolean estoque;
 
+    public ProdutoModel(){}
+
+    public ProdutoModel(Long id,String nome, BigDecimal preco, Boolean estoque){
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.estoque = estoque;
+    }
+
     public Long getId() {
         return id;
     }
