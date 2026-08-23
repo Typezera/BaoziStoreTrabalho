@@ -5,10 +5,9 @@ import com.trabalho.baozi.service.cliente.ClienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RestController
@@ -25,5 +24,17 @@ public class ClienteController {
     ){
         var cliente = clienteService.cadastrarCliente(clienteModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(cliente);
+    }
+
+    @GetMapping("buscar/{id}")
+    public ResponseEntity<ClienteModel>encontrarCliente(
+            @PathVariable Long id
+    ){
+        return ResponseEntity.ok(clienteService.buscarPorId(id));
+    }
+
+    @GetMapping("buscar/todos")
+    public ResponseEntity<List<ClienteModel>>todosClientes(){
+        return ResponseEntity.ok(clienteService.todosClientes());
     }
 }

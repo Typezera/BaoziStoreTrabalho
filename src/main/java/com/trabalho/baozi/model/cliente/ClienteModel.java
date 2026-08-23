@@ -18,6 +18,14 @@ public class ClienteModel {
     @CreationTimestamp
     LocalDateTime clienteDesde;
 
+    public ClienteModel(){};
+
+    public ClienteModel(Long id, String nome, LocalDateTime clienteDesde){
+        this.id = id;
+        this.nome = nome;
+        this.clienteDesde = clienteDesde;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
